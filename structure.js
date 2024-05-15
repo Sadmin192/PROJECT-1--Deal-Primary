@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var mainNav = document.getElementById('mainNav');
   var mainContent = document.getElementById('mainContent');
   mainNav.addEventListener('mouseover', function() {
-    mainContent.style.marginTop = '150px'; // Променете тази стойност според нуждите на вашето меню
+    mainContent.style.marginTop = '150px'; // For CHANGE-------------------|
   });
   mainNav.addEventListener('mouseout', function() {
     mainContent.style.marginTop = '0';
@@ -37,9 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-/* BODY  */
 
-/* NAVI  */
 
 /* MAIN */
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,11 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSlideAndText();
   setInterval(updateSlideAndText, 8000);
 });
-
-// Функция за показване на Spinner-а--------------------------------------
-
-
-/* FOOTER  */
 
 /* Тема на сайта */
 const themeToggleButton = document.getElementById('theme-toggle');
