@@ -1,0 +1,311 @@
+/* HEADER  */
+/* BACKGROUND  */
+/* Основни стилове */
+  
+header {
+margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-size: 30px;
+  background: linear-gradient( rgb(135, 206, 235), #1e2a7a);
+  color: #333;
+}
+
+/* Стилове за header и nav */
+header, nav {
+  background-color: #1e2a7a;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* Усъвършенстван box-shadow за дълбочина */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилове за заглавия и връзки */
+header h1, nav a {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  /* Множество слоеве на text-shadow за по-дълбок 3D ефект */
+  text-shadow: 0 0 5px #000000, 0 0 10px #fdfdfd, 0 0 15px #ffffff, 0 0 20px #eeff00, 0 0 25px #add8e6, 0 0 30px #2193b0, 0 0 35px #2193b0;
+}
+
+/* Стилове за навигационното меню */
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav > ul > li {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+nav a:hover, nav > ul > li:hover > a {
+  color: #fffb07;
+  text-shadow: 0 0 10px #000000;
+}
+
+/* Стилове за подменюто */
+nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(to right, rgb(135, 206, 235) 0%, #1e2a7a 100%);
+  /* Усъвършенстван box-shadow за 3D ефект */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.4), 0 6px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+nav > ul > li:hover > ul {
+  display: block;
+}
+
+nav > ul > li > ul > li {
+  padding: 0;
+}
+
+nav > ul > li > ul a {
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+nav .active {
+  text-shadow: 0 0 10px rgb(135, 206, 235);
+}
+
+/* Стилове за main-a */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+  --background-light: #fafafa;
+  --text-color: #333;
+  --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  --floating-duration: 5s;
+  --gradient-duration: 2s;
+  --gradient-colors:#1e2a7a, #1e2a7a,#1e2a7a,#1e2a7a, rgb(135, 206, 235);
+  --background-pattern: rgb(135, 206, 235); /* Цвят за фоновия модел */
+}
+
+#services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  color: var(--text-color);
+  min-height: 100vh;
+  background-color: var(--background-light);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--background-pattern) 0,
+    var(--background-pattern) 1px,
+    transparent 1px,
+    transparent 50px
+  ); /* Добавяне на фонов модел */
+  background-attachment: fixed; /* Фонът остава фиксиран при скролиране */
+}
+
+h2 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 30px;
+  /*background: linear-gradient(180deg, rgb(135, 206, 235), #1e2a7a);*/
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative; /* Задаване на позицията относително за анимациите */
+}
+
+#text-container {
+  animation: floating var(--floating-duration) ease-in-out infinite, gradient var(--gradient-duration) ease infinite;
+  background: linear-gradient(-45deg, var(--gradient-colors));
+  background-size: 400% 400%;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow), 0 0 40px rgba(0,0,0,0.15); /* Добавяне на допълнителна сенка за дълбочина */
+  text-align: center;
+  width: 80%;
+}
+
+#slider-container {
+  width: 80%;
+  overflow: hidden;
+}
+
+#slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+#slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: fadeIn 0ms ease-in-out;
+  animation-timing-function:cubic-bezier(0.39, 0.575, 0.565, 1) 
+}
+
+@media (max-width: 768px) {
+  .content, #text-container, #slider-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+
+
+main {
+  transition: transform 0.5s ease;
+}
+nav ul li:hover ~ main {
+  transform: translateY(100px); /* Променете стойността според височината на вашето подменю */
+}
+
+
+  /* Оптимизиран CSS за контактна форма */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px var(--shadow-color);
+  background: transparent;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  width: calc(100% - 30px);
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 3px var(--shadow-color);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 1px 3px var(--primary-color);
+}
+
+#contact-form button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transform: translateY(-2px);
+}
+
+/* Оптимизиран CSS за футър */
+footer {
+  background-color: #333;
+  color: #f2f2f2;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+footer a {
+  color: #4da6ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #d4e8ff;
+}
+
+/* Оптимизиран CSS за социални икони */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* Оптимизиран CSS за Loading Spinner */
+
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* CSS променливи */
+:root {
+  --primary-color: #66a6ff;
+  --hover-color: #5591ff;
+  --shadow-color: rgba(0,0,0,0.1);
+  --border-radius: 8px;
+}
+
+  

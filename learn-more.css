@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: 30px;
+    background: linear-gradient(180deg, rgb(135, 206, 235), #1e2a7a);
+    color: #333;
+  }
+  
+  /* Стилове за header и nav */
+  header, nav {
+    background-color: #152863;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Усъвършенстван box-shadow за дълбочина */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Стилове за заглавия и връзки */
+  header h1, nav a {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Множество слоеве на text-shadow за по-дълбок 3D ефект */
+    text-shadow: 0 0 5px #000000, 0 0 10px #fdfdfd, 0 0 15px #ffffff, 0 0 20px #eeff00, 0 0 25px #add8e6, 0 0 30px #2193b0, 0 0 35px #2193b0;
+  }
+  
+  /* Стилове за навигационното меню */
+  nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav > ul > li {
+    position: relative;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav a:hover, nav > ul > li:hover > a {
+    color: #fffb07;
+    text-shadow: 0 0 10px #000000;
+  }
+  
+  /* Стилове за подменюто */
+  nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(to right, rgb(135, 206, 235) 0%, #1e2a7a 100%);
+    /* Усъвършенстван box-shadow за 3D ефект */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.4), 0 6px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  nav > ul > li:hover > ul {
+    display: block;
+  }
+  
+  nav > ul > li > ul > li {
+    padding: 0;
+  }
+  
+  nav > ul > li > ul a {
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  
+  nav .active {
+    text-shadow: 0 0 10px rgb(135, 206, 235);
+  
+  }
+  
+  /*Този код е до navigation bar-а-----------------------------------------------------------------------------------*/
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: 26px;
+    background: linear-gradient(180deg, rgb(135, 206, 235), #1e2a7a);
+    color: #333;
+}
+
+header {
+    background-color: #152863;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    color: rgb(234, 255, 0);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+    text-decoration: none;
+    text-shadow: 0 0 5px #000000, 0 0 10px #fdfdfd;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.service-item {
+    background-color: #fff;
+    border-radius: 1005px;
+    box-shadow: 0 0px 100px rgba(255, 255, 255, 0.955);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-item img {
+    width: 40%;
+    height: auto;
+    object-fit: fill;
+}
+
+.service-item p {
+    padding: 15px;
+    margin: 0;
+    width: 50%;
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column;
+    }
+
+    .service-item img, .service-item p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+  .service-item {
+      width: 45%;
+  }
+}

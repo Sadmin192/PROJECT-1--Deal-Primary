@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Смяна на шрифта за по-модерен вид */
+  font-size: 16px; /* Намаляване на размера на шрифта за по-добра четимост */
+  background: linear-gradient(180deg, #eef2f3, #8e9eab); /* По-нежен градиент за съвременен вид */
+  color: #333;
+  line-height: 1.6; /* Добавяне на интерлиньор за по-добра четимост */
+}
+
+header, nav {
+  background-color: #1c2331; /* По-тъмен цвят за повече контраст */
+  padding: 2rem 0; /* Намаляване на padding за по-изчистен вид */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 6px 10px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* По-фин box-shadow за съвременен вид */
+}
+
+header h1, nav a {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Намаляване на разстоянието между буквите */
+  font-weight: 600; /* По-леко удебеляване за по-изчистен вид */
+  font-size: 1.25rem; /* Намаляване на размера на шрифта за заглавията */
+  margin: 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-shadow: none; /* Премахване на text-shadow за по-изчистен вид */
+}
+
+/* ... останалите стилове за header и nav ... */
+
+/* Стилове за main и section */
+main {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Корекция на box-sizing */
+}
+
+section {
+  background-color: #ffffff;
+  margin: 10px 0;
+  padding: 20px; /* Увеличаване на padding за по-добра четимост */
+  border: none; /* Премахване на рамката за по-изчистен вид */
+  border-radius: 8px; /* Закръгляне на ъглите за по-модерен вид */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+section:hover {
+  transform: translateY(-2px); /* Добавяне на леко издигане при hover за динамичен ефект */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Усилване на box-shadow при hover за дълбочина */
+}
+
+/* ... останалите стилове ... */
+/* ... останалите стилове ... */
+
+/* Стилове за навигационното меню */
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Добавяне на wrap за отзивчивост */
+}
+
+nav > ul > li {
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease; /* Плавен преход на фона при hover */
+}
+
+nav > ul > li:not(:last-child) {
+  margin-right: 1rem; /* Добавяне на маржин между елементите */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover, nav > ul > li:hover > a {
+  color: #fffb07; /* Светъл цвят за акцент при hover */
+  text-shadow: none; /* Премахване на text-shadow за по-изчистен вид */
+}
+
+nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff; /* Светъл фон за подменюто */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Сенки за дълбочина */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: max-content; /* Широчина според съдържанието */
+}
+
+nav > ul > li:hover > ul {
+  display: block;
+}
+
+nav > ul > li > ul > li {
+  padding: 0.5rem 1rem; /* Подходящ padding за елементите на подменюто */
+}
+
+nav > ul > li > ul a {
+  color: #333; /* Тъмен цвят за текста на подменюто */
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+nav .active {
+  color: #fffb07; /* Светъл цвят за активния елемент */
+  text-shadow: none;
+}
+
+/* Стилове за основното съдържание */
+main {
+  padding: 2rem;
+  max-width: 1200px; /* Максимална ширина за центриране на съдържанието */
+  margin: auto; /* Центриране на main елемента */
+}
+
+section {
+  background-color: #f7f7f7; /* Светъл фон за секциите */
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 8px; /* Закръгляне на ъглите за по-модерен вид */
+  transition: all 0.3s ease; /* Плавен преход на всички свойства */
+}
+
+section:hover {
+  transform: translateY(-5px); /* По-голямо издигане при hover */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18); /* По-силна сянка при hover */
+}
+
+/* Стилове за изскачащи прозорци (modals) */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.active {
+  display: block; /* Показване на активния модал */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  width: 50%;
+  background-color: #fff; /* Светъл фон за модала */
+  padding: 2rem;
+  border-radius: 8px; /* Закръгляне на ъглите за модала */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* Сенки за дълбочина на модала */
+}
+
+/* Добавяне на анимации и преходи може да направи интерфейса по-динамичен и приятен за използване. */
+
+
+/* Основни анимации и преходи */
+
+/* Плавен преход за всички кликабилни елементи */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Ховър ефект за връзки */
+a:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+/* Анимация за бутони */
+button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #fffb07; /* Светъл цвят за акцент */
+  transform: scale(1.05); /* Леко увеличение при ховър */
+}
+
+/* Анимация за секции при ховър */
+section:hover {
+  transform: scale(1.02); /* Леко увеличение и сянка за дълбочина */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Анимация за лого */
+header h1 {
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Анимация за зареждане */
+.loader {
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+/* Анимация за фоново изображение */
+.bg-image {
+  animation: zoomInOut 10s infinite alternate ease-in-out;
+}
+
+@keyframes zoomInOut {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
